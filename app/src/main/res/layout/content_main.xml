@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.vivo.yzz.music.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+    <android.support.v4.view.ViewPager
+        android:layout_weight="9"
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/pager_tab"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.PagerTabStrip>
+    </android.support.v4.view.ViewPager>
+    <RelativeLayout
+        android:id="@+id/bottom_view"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="10dp"
+            app:srcCompat="@drawable/music"
+            android:id="@+id/iv_album"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <TextView
+            android:id="@+id/bottom_tv_title"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_album"
+            android:text="歌名"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="playNext"
+            android:id="@+id/bottom_next"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/next_black"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <Button
+            android:onClick="playPause"
+            android:layout_marginRight="20dp"
+            android:id="@+id/bottom_play"
+            android:layout_toLeftOf="@id/bottom_next"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:background="@drawable/start_black"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+</LinearLayout>

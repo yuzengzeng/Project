@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\8660ce9ae22714cf0c535aa85cd3ab5221a57a71\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_af8f65e160d300e233c2e58ba2a2f7097f5a7027.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\3a9daeb90c5ef79cab6cc40106694b755f4b5a90\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_2af0112110193d68fa416d901296fc4efcf252a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\ea9f940277b7f9740546dc2c7084ba3ef94f8825\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_765829cf48be86b7919e61329de4a805473d5e14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\0bc22d3b8767839a7712492e9abd12e2d00cacd4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_321dea73017635f8746bc9a669a5ca315ac64608.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\0e86edd11a6263afc260fe8be0356323d31423d5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_a49c202c9d044961deed394df9c6c82b30190163.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\8399d3e6c9dd598b612a3e12c84a77d13deaa8c3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_aff133455d86b83aab29cfd87d6f12a772677fa1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\66da6d8a80fc39afed4ed9c4d5a57dac9d3ce7dc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_ae8040cfe6e9bbfd1f8d5cdfe29fb4333afa9fd1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\aedd40c6358a89767e3f193f57ada6ba6db7572c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_8587c4bf871d2ef36e5e3201e5f60b9ce3d1581f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\ProgramFiles\AndroidSDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_fad8a079feb5a9f4fd06d08a51175f05bbe3ac5b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\9e654a34d8ef3f06e4aa1c14077b2731265a4782\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_58b9db9743e2646ca597cecb13736b0cb115b00a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\4671b61a0a7170304e1d62a267f321b653de0e15\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_b51f0e88bec588c5273dd75741a706ca89da09ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\442bfea4282ae8396e09d941ff9d2ce82b3817a7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_86d0ea86b0a46c0255f5813b8d4922ff6eaf7ac9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\ed1fbc2243445591daeb3995cdd2e8dddf011d16\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_664e6a675bc080703700eede1c89545ac486d70f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\TEMP\.android\build-cache\8453c50466a686b24ce33a39789d51e922886872\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\classes_11de0a764c77ad362a1167ea0f04b1dcfdcd7003.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\ProgramFiles\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="E:\Music-master\Music-master\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_64eb0a5354afffb43edbeac8e4b4741fcbde2c4d.jar" />
+    </item>
+
+</items>

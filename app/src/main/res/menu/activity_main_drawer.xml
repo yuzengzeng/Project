@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_author"
+            android:icon="@drawable/author_g"
+            android:title="歌手" />
+        <item
+            android:id="@+id/nav_album"
+            android:icon="@drawable/a_g"
+            android:title="专辑" />
+    </group>
+
+    <item android:title="运动">
+        <menu>
+            <item
+                android:id="@+id/nav_step"
+                android:icon="@drawable/step_g"
+                android:title="计步" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
