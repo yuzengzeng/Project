@@ -60,23 +60,22 @@ public class MusicService extends Service {
             }
         });
 
+        //默认列表为本地
+        MyApplication.playingList=MyApplication.musicList;
+
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         remoteViews = new RemoteViews(this.getPackageName(), R.layout.notification);
+
         Notification.Builder builder=new Notification.Builder(this.getApplicationContext()).
                 setContent(remoteViews)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.music);
                 notification = builder.getNotification();
                 startForeground(110, notification);
-
-
-
-
-
 
         return super.onStartCommand(intent,flags,startId);
 
@@ -113,6 +112,7 @@ public class MusicService extends Service {
     }
 
     public void start(){
+        //remoteViews.setCharSequence(R.id.no_tv_title,"HHH",MyApplication.playingList.get(MyApplication.playingIndex).getTitle());
         try {
             mediaPlayer.reset();
             mediaPlayer.setDataSource(MyApplication.playingList.get(MyApplication.playingIndex).getData());

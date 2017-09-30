@@ -8,8 +8,8 @@
             android:padding="10dp"
             app:srcCompat="@drawable/music"
             android:id="@+id/no_iv_album"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
         <TextView
             android:layout_marginTop="10dp"
             android:id="@+id/no_tv_title"

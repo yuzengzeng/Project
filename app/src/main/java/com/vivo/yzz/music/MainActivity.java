@@ -67,8 +67,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //默认列表为本地
-        MyApplication.playingList=MyApplication.musicList;
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -237,6 +236,12 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        if (MyApplication.isPlaying){
+            changeTitleAndImage();
+            btnBottomPlay.setBackgroundResource(R.drawable.pause_black);
+
+        }
+
 
 
     }
@@ -320,7 +325,8 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+
+        }else{
             super.onBackPressed();
         }
     }

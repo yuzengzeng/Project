@@ -174,4 +174,11 @@ public class Splash extends AppCompatActivity {
 
         return list;
     }
+
+    @Override
+    protected void onDestroy() {
+        //默认列表为本地
+        MyApplication.playingList=MyApplication.musicList;
+        super.onDestroy();
+    }
 }
