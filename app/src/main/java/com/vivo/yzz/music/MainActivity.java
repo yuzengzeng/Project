@@ -1,5 +1,8 @@
 package com.vivo.yzz.music;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -27,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.vivo.yzz.music.Service.MusicService;
 import com.vivo.yzz.music.music.Music;
 
 import java.util.ArrayList;
@@ -50,6 +55,8 @@ public class MainActivity extends AppCompatActivity
     private Button btnBottomNext;
     private TextView tvTitle;
     private ImageView ivBottom;
+    private TextView tvUserName;
+    private TextView tvName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //默认列表为本地
+        MyApplication.playingList=MyApplication.musicList;
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -82,9 +91,6 @@ public class MainActivity extends AppCompatActivity
         titles.add("在线音乐");
 
 
-
-
-
         viewLocal = getLayoutInflater().inflate(R.layout.view_local,null);
         viewOnline = getLayoutInflater().inflate(R.layout.view_online,null);
 
@@ -101,21 +107,71 @@ public class MainActivity extends AppCompatActivity
         viewPager.setAdapter(myPagerAdapter);
 
 
+
+
         //初始化底部按钮
         btnBottomPlay = (Button)findViewById(R.id.bottom_play);
         btnBottomNext = (Button)findViewById(R.id.bottom_next);
         tvTitle = (TextView)findViewById(R.id.bottom_tv_title);
         ivBottom = (ImageView)findViewById(R.id.iv_album);
 
+
+
+        View header= navigationView.getHeaderView(0);
+        tvName = header.findViewById(R.id.user_name);
+
+
+        tvName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!MyApplication.isLogin) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        tvName.setText(MyApplication.currentUser);
+
+
         initView();
+
+
+
+        //开启播放服务
+        if (MyApplication.serviceIsStarted==false){
+            Intent intent=new Intent(MainActivity.this, MusicService.class);
+            startService(intent);
+        }
     }
+
 
 
     public void playNext(View v){
         if (MyApplication.playingStyle==0){
-            MyApplication.playingIndex=(MyApplication.playingIndex+1)%MyApplication.musicList.size();
+
             MyApplication.isPlaying=true;
             btnBottomPlay.setBackgroundResource(R.drawable.pause_black);
+
+            Intent intenNext=new Intent(MusicService.ACTION_NEXT);
+            sendBroadcast(intenNext);
+            if (MyApplication.playingIndex<MyApplication.playingList.size()-1){
+                MyApplication.playingIndex++;
+            }else{
+                MyApplication.playingIndex=0;
+            }
+            changeTitleAndImage();
+        }
+    }
+
+    public void changeTitleAndImage(){
+
+        tvTitle.setText(MyApplication.playingList.get(MyApplication.playingIndex).getTitle());
+        Bitmap bitmap=BitmapFactory.decodeFile(MyApplication.playingList.get(MyApplication.playingIndex).getImageUri());
+        if (bitmap!=null) {
+            ivBottom.setImageBitmap(bitmap);
+        }else{
+            ivBottom.setImageResource(R.drawable.music);
         }
     }
 
@@ -123,10 +179,16 @@ public class MainActivity extends AppCompatActivity
         if (MyApplication.isPlaying){
             btnBottomPlay.setBackgroundResource(R.drawable.start_black);
             MyApplication.isPlaying=false;
+            Intent intentPause=new Intent(MusicService.ACTION_PAUSE);
+            sendBroadcast(intentPause);
         }else {
             btnBottomPlay.setBackgroundResource(R.drawable.pause_black);
             MyApplication.isPlaying=true;
+            Intent intentPlay=new Intent(MusicService.ACTION_START);
+            sendBroadcast(intentPlay);
         }
+
+        changeTitleAndImage();
 
     }
 
@@ -145,7 +207,7 @@ public class MainActivity extends AppCompatActivity
         arrayAdapter.add("懒洋洋");
         lvOnline.setAdapter(arrayAdapter);
 
-        MyLocalMusicAdapter localMusicAdapter=new MyLocalMusicAdapter();
+        final MyLocalMusicAdapter localMusicAdapter=new MyLocalMusicAdapter();
 
         lvLocal.setAdapter(localMusicAdapter);
 
@@ -155,6 +217,23 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onRefresh() {
 
+            }
+        });
+
+
+        lvLocal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                View item=localMusicAdapter.getView(i,null,null);
+                TextView tvTitle=item.findViewById(R.id.tv_title);
+                tvTitle.setTextColor(getColor(R.color.colorPrimary));
+                MyApplication.playingIndex=i;
+                btnBottomPlay.setBackgroundResource(R.drawable.pause_black);
+                MyApplication.isPlaying=true;
+                Intent intentPlay=new Intent(MusicService.ACTION_START);
+                sendBroadcast(intentPlay);
+                MyApplication.state=0;
+                changeTitleAndImage();
             }
         });
 
@@ -281,7 +360,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

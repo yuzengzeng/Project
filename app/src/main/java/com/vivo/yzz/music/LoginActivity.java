@@ -27,7 +27,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,23 +47,37 @@ public class LoginActivity extends AppCompatActivity  {
     // UI references.
     private AutoCompleteTextView nameView;
     private EditText mPasswordView;
+    private ProgressBar loginProgressBar;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        MyApplication.activityList.add(this);
-
         nameView=(AutoCompleteTextView)findViewById(R.id.name);
         mPasswordView=(EditText)findViewById(R.id.password);
+        loginProgressBar = (ProgressBar)findViewById(R.id.login_progress);
+
+        loginButton = (Button)findViewById(R.id.login);
+
 
     }
 
-
-
-
-
+    public void login(View view){
+        String name=nameView.getText().toString();
+        String password=mPasswordView.getText().toString();
+        if (name.equals("")||name.equals(" ")||name==null){
+            Toast.makeText(this, "姓名不能为空", Toast.LENGTH_SHORT).show();
+        }else if (password.equals("")||password.equals(" ")||password==null){
+            Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+        }else {
+            loginProgressBar.setVisibility(View.VISIBLE);
+            //发送数据
+            loginButton.setClickable(false);
+            loginButton.setText("登录中，请稍后。。。。");
+        }
+    }
 
 }
 

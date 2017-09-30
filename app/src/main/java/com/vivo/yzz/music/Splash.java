@@ -60,9 +60,11 @@ public class Splash extends AppCompatActivity {
                     cursor = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,null,null,null,null);
                     MyApplication.musicList=getMusic();
                     SystemClock.sleep(1000);
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+
                             Intent intent=new Intent(Splash.this,MainActivity.class);
 
                             startActivity(intent);
@@ -79,9 +81,6 @@ public class Splash extends AppCompatActivity {
 
 
         }
-
-
-
 
     }
 
@@ -136,6 +135,7 @@ public class Splash extends AppCompatActivity {
             int durationCol = cursor.getColumnIndex(MediaStore.Audio.Media.DURATION);
             int idCol = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
             int sizeCol = cursor.getColumnIndex(MediaStore.Audio.Media.SIZE);
+            //int lrcCol=cursor.getColumnIndex(MediaStore.Audio.Media.)
 
             String albumArt = new String();
 

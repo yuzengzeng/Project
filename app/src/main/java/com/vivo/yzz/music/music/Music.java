@@ -14,6 +14,15 @@ public class Music {
     private long id;
     private long size;
     private String albumKey;
+    private String lrc;
+
+    public String getLrc() {
+        return lrc;
+    }
+
+    public void setLrc(String lrc) {
+        this.lrc = lrc;
+    }
 
     public Music(){
         super();
